@@ -167,6 +167,68 @@ The project is successful if:
 
 ---
 
+## 🔄 Continuous Integration (GitHub Actions)
+
+This project uses **GitHub Actions** to support a lightweight and reliable **Continuous Integration (CI)** workflow.
+The goal is to maintain code quality and stability while respecting **SharePoint governance constraints**.
+
+### Why GitHub Actions Are Used
+
+* Validate frontend builds before merging
+* Enforce consistent code style and quality
+* Detect dependency vulnerabilities early
+* Reduce integration issues in a student-led team
+* Support collaborative development without automating deployment
+
+Automated deployment is **intentionally excluded**, as SharePoint solutions require controlled, manual deployment.
+
+---
+
+### Active Workflows
+
+#### ✅ Frontend Build & Lint
+
+Runs on every push and pull request to ensure the React + SPFx frontend:
+
+* Installs dependencies successfully
+* Passes linting checks
+* Builds without errors
+
+This prevents broken SPFx builds from reaching the main branch.
+
+---
+
+#### 🧹 Code Quality Checks
+
+Enforces consistent formatting and coding standards using ESLint and Prettier.
+This improves readability, reduces merge conflicts, and ensures maintainable code.
+
+---
+
+#### 🔐 Dependency Security Scanning
+
+Regularly scans project dependencies for known vulnerabilities.
+This supports security best practices expected in institutional environments.
+
+---
+
+#### 📝 Documentation Validation (Optional)
+
+Checks Markdown files for formatting issues to maintain professional documentation quality.
+
+---
+
+### What CI Does *Not* Do
+
+* Deploy to SharePoint automatically
+* Manage authentication secrets
+* Provision infrastructure
+* Modify SharePoint environments
+
+All deployments are handled **manually** to ensure compliance and reduce risk.
+
+---
+
 ## 📜 License
 
 This project is developed for academic and institutional use by the **University of Sunderland Sustainability Team**.
